@@ -3,10 +3,23 @@
   "version": "0.0.-1",
   "description": "",
   "type": "module",
+  "private": true,
+  "workspaces": [
+    "workers"
+  ],
+  "trustedDependencies": [
+    "esbuild",
+    "workerd"
+  ],
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
+    "start": "bun run dev",
+    "dev": "bun run --parallel dev:web dev:worker",
+    "dev:web": "vite",
+    "dev:worker": "bun --cwd=workers run dev",
+    "build": "bun run build:web && bun run build:worker",
+    "build:web": "vite build",
+    "build:worker": "bun --cwd=workers run build",
+    "deploy:worker": "bun --cwd=workers run deploy",
     "serve": "vite preview"
   },
   "license": "MIT",
