@@ -1,16 +1,21 @@
 {
+  "dependencies": {
+    "@solidjs/router": "^0.15.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "solid-js": "^1.9.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "oxfmt": "^0.70.0",
+    "oxlint": "^1.85.0",
+    "postcss": "^8.4.49",
+    "solid-devtools": "^0.34.3",
+    "tailwindcss": "^4.3.3",
+    "ultracite": "7.12.0",
+    "vite": "^7.1.4",
+    "vite-plugin-solid": "^2.11.8"
+  },
   "name": "diana-radio-last",
-  "version": "0.0.-1",
-  "description": "",
-  "type": "module",
-  "private": true,
-  "workspaces": [
-    "workers"
-  ],
-  "trustedDependencies": [
-    "esbuild",
-    "workerd"
-  ],
   "scripts": {
     "start": "bun run dev",
     "dev": "bun run --parallel dev:web dev:worker",
@@ -20,20 +25,20 @@
     "build:web": "vite build",
     "build:worker": "bun --cwd=workers run build",
     "deploy:worker": "bun --cwd=workers run deploy",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.13",
-    "postcss": "^8.4.49",
-    "solid-devtools": "^0.34.3",
-    "tailwindcss": "^4.3.3",
-    "vite": "^7.1.4",
-    "vite-plugin-solid": "^2.11.8"
-  },
-  "dependencies": {
-    "@solidjs/router": "^0.15.1",
-    "@tailwindcss/vite": "^4.3.3",
-    "solid-js": "^1.9.5"
-  }
+  "type": "module",
+  "version": "0.0.-1",
+  "workspaces": [
+    "workers"
+  ],
+  "description": "",
+  "private": true,
+  "trustedDependencies": [
+    "esbuild",
+    "workerd"
+  ],
+  "license": "MIT"
 }
