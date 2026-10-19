@@ -1,4 +1,26 @@
 {
+  "name": "diana-radio-last",
+  "version": "0.0.-1",
+  "private": true,
+  "description": "",
+  "license": "MIT",
+  "workspaces": [
+    "workers"
+  ],
+  "type": "module",
+  "scripts": {
+    "start": "bun run dev",
+    "dev": "bun run --parallel dev:web dev:worker",
+    "dev:web": "vite",
+    "dev:worker": "bun --cwd=workers run dev",
+    "build": "bun run build:web && bun run build:worker",
+    "build:web": "vite build",
+    "build:worker": "bun --cwd=workers run build",
+    "deploy:worker": "bun --cwd=workers run deploy",
+    "serve": "vite preview",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
   "dependencies": {
     "@solidjs/router": "^0.15.1",
     "@tailwindcss/vite": "^4.3.3",
@@ -15,30 +37,8 @@
     "vite": "^7.1.4",
     "vite-plugin-solid": "^2.11.8"
   },
-  "name": "diana-radio-last",
-  "scripts": {
-    "start": "bun run dev",
-    "dev": "bun run --parallel dev:web dev:worker",
-    "dev:web": "vite",
-    "dev:worker": "bun --cwd=workers run dev",
-    "build": "bun run build:web && bun run build:worker",
-    "build:web": "vite build",
-    "build:worker": "bun --cwd=workers run build",
-    "deploy:worker": "bun --cwd=workers run deploy",
-    "serve": "vite preview",
-    "check": "ultracite check",
-    "fix": "ultracite fix"
-  },
-  "type": "module",
-  "version": "0.0.-1",
-  "workspaces": [
-    "workers"
-  ],
-  "description": "",
-  "private": true,
   "trustedDependencies": [
     "esbuild",
     "workerd"
-  ],
-  "license": "MIT"
+  ]
 }

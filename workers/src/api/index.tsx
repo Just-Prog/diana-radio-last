@@ -6,7 +6,7 @@ api.get("/health", (c) =>
     ok: true,
     service: "diana-radio-back",
     now: new Date().toISOString(),
-  }),
+  })
 );
 
 export default api;
