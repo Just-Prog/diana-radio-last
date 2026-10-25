@@ -10,7 +10,7 @@
   "type": "module",
   "scripts": {
     "start": "bun run dev",
-    "dev": "bun run --parallel dev:web dev:worker",
+    "dev": "bun run scripts/dev.ts",
     "dev:web": "vite",
     "dev:worker": "bun --cwd=workers run dev",
     "build": "bun run build:web && bun run build:worker",
@@ -22,6 +22,7 @@
     "fix": "ultracite fix"
   },
   "dependencies": {
+    "@simplewebauthn/browser": "^14.0.0",
     "@solidjs/router": "^0.15.1",
     "@tailwindcss/vite": "^4.3.3",
     "solid-js": "^1.9.5"

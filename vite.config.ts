@@ -6,18 +6,19 @@ import solidPlugin from "vite-plugin-solid";
 import { devPorts, workerOrigin } from "./vite.global";
 
 export default defineConfig({
+  build: {
+    target: "esnext",
+  },
+
   plugins: [devtools(), solidPlugin(), tailwindcss()],
   server: {
     port: devPorts.web,
-    strictPort: true,
     proxy: {
       "/api": {
-        target: workerOrigin,
         changeOrigin: true,
+        target: workerOrigin,
       },
     },
-  },
-  build: {
-    target: "esnext",
+    strictPort: true,
   },
 });

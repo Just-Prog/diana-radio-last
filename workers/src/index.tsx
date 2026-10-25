@@ -1,5 +1,6 @@
 import { Hono, HonoRequest } from "hono";
 import { cors } from "hono/cors";
+import { HTTPException } from "hono/http-exception";
 
 import api from "./api";
 
@@ -10,16 +11,32 @@ app.use(
   cors({
     allowHeaders: ["X-Custom-Header", "Upgrade-Insecure-Requests"],
     allowMethods: ["POST", "GET", "OPTIONS"],
-    origin: [
-      "http://localhost:3077",
-      "http://127.0.0.1:3077",
-      "https://diana-radio-last.asoulofficial.cn.eu.org",
-    ],
+    origin: JSON.parse(import.meta.env.VITE_ALLOWED_ORIGINS),
   })
 );
 
-app.route("/api", api);
+app.use("/*", async (c, next) => {
+  c.header("X-Powered-By", "Hono");
+  c.header("X-Whoami", "Diana-Radio-Last-SelfHosted");
+  return await next();
+});
 
-app.all("/*", (c) => c.redirect("https://space.bilibili.com/672328094/"));
+app.route("/api", api);
+app.all("/", (c) =>
+  c.json({
+    // c_time: new Date(),
+    env: import.meta.env.DEV ? "dev" : "prod",
+    greeting: "worker_backend",
+    love_from: "diana",
+    sweetest: "strawberry",
+  })
+);
+
+app.notFound((c) => {
+  if (import.meta.env.PROD) {
+    return c.redirect("https://space.bilibili.com/672328094");
+  }
+  return c.json({ msg: "You spelled it WRONG." });
+});
 
 export default app;
