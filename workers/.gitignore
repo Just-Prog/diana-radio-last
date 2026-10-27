@@ -22,7 +22,7 @@ worker-configuration.d.ts
 # env
 .env
 .env.production
-.dev.vars
+# .dev.vars
 
 # logs
 logs/
