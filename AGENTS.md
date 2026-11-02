@@ -2,10 +2,15 @@
 
 This project uses **Ultracite**, a zero-config preset that enforces strict code quality standards through automated formatting and linting.
 
+## Monorepo Layout
+
+This repository is a pnpm workspace with two packages: `frontend/` (React Router 8 + Vite, SSR) and `workers/` (Hono on Cloudflare Workers). The Ultracite toolchain lives at the repository root (`oxlint.config.ts`, `oxfmt.config.ts`), and every command below covers both packages. Run them from the repository root.
+
 ## Quick Reference
 
-- **Format code**: `pnpm exec ultracite fix`
-- **Check for issues**: `pnpm exec ultracite check`
+- **Format code**: `pnpm exec ultracite fix` (or `pnpm fix`)
+- **Check for issues**: `pnpm exec ultracite check` (or `pnpm check`)
+- **Lint only**: `pnpm lint` · **Format only**: `pnpm format`
 - **Diagnose setup**: `pnpm exec ultracite doctor`
 
 Oxlint + Oxfmt (the underlying engine) provides robust linting and formatting. Most issues are automatically fixable.
