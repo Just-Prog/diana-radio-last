@@ -2,7 +2,7 @@
 
 ## 此版本的Diana Radio仍在准备，请稍等片刻
 
-Powered by React & Hono & Cloudflare
+Powered by React Router & Hono & Cloudflare
 
 ```shell
 \$ pnpm i

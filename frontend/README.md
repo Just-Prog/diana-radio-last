@@ -1,5 +1,7 @@
 # Welcome to React Router!
 
+> （不幸记错安装指令导致使用了 `npx create-react-router@latest` ，此前端部分非Vite全役）
+
 A modern, production-ready template for building full-stack React applications using React Router.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
