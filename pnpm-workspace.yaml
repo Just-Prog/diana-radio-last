@@ -4,3 +4,6 @@ packages:
 allowBuilds:
   esbuild: true
   workerd: true
+permissions:
+  ultracite:
+    skills: true

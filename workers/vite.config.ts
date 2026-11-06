@@ -15,7 +15,12 @@ process.env.TMP = projectTempDirectory;
 process.env.TMPDIR = projectTempDirectory;
 
 export default defineConfig({
-  plugins: [cloudflare(), ssrPlugin()],
+  plugins: [
+    cloudflare({
+      configPath: "./wrangler.jsonc",
+    }),
+    ssrPlugin(),
+  ],
   server: {
     port: 3777,
   },

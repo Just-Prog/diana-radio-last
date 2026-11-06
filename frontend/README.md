@@ -1,6 +1,6 @@
 # Welcome to React Router!
 
-> （不幸记错安装指令导致使用了 `npx create-react-router@latest` ，此前端部分非Vite全役）
+> （不幸记错安装指令导致使用了 `npx create-react-router@latest` ，此前端部分非Vite全役，目前为React Router Framework Mode产物）
 
 A modern, production-ready template for building full-stack React applications using React Router.
 

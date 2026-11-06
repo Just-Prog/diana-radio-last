@@ -2,5 +2,14 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "workers",
   "compatibility_date": "2025-08-03",
-  "main": "./src/index.tsx",
+  "main": "./src/index.ts",
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "diana_radio_last",
+      "database_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", // create with `wrangler d1 create` and fill by yourself
+      "migrations_dir": "migrations",
+    },
+  ],
 }

@@ -1,3 +1,7 @@
+> For Dev eloper:
+>
+> 调试时请修改 `wrangler.jsonc` 的数据库数据为自己的，使用npm command初始化时请指定`<数据库名> <数据库位置>`参数（位置为`--local`或者`--remote`）。
+
 ```txt
 npm install
 npm run dev
