@@ -1,7 +1,7 @@
 import { drizzle } from "drizzle-orm/d1";
 import { Hono } from "hono";
 
-import { users, users as usersSchema } from "../db/schema";
+import { users, users as usersSchema } from "../lib/db/schema";
 
 interface Bindings {
   DB: D1Database;
